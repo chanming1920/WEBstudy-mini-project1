@@ -67,8 +67,24 @@ function f1(){
 
 function f2(){
     return new Promise((resolve,reject)=>{
-        console.log("");
-        reject("");
+        let score = 0;
+        if(/[A-Z]/.test(arr)) score++;
+        if(/[a-z]/.test(arr)) score++;
+        if(/[\w_]/.test(arr)) score++;
+
+        // switch(score) {
+        //     case 0:
+        //     case 1:
+        //         return 'Bad';
+        //     case 2:
+        //         return 'Good';
+        //     case 3:
+        //         return 'Nice';
+        //     default:
+        //         return '';
+        // }
+        console.log("score: ",score);
+        reject("error msg");
         return;
         resolve("");
     })
@@ -114,17 +130,17 @@ async function taskf()
 {
     try{
         let result = await f1();
-        console.log("");
+        console.log("Next");
         result = await f2();
-        console.log("");
-        result = await f3();
-        console.log("");
-        result = await f4();
-        console.log("");
-        result = await f5();
-        console.log("");
-        result = await f6();
-        console.log("");
+        console.log("Next");
+        // result = await f3();
+        // console.log("");
+        // result = await f4();
+        // console.log("");
+        // result = await f5();
+        // console.log("");
+        // result = await f6();
+        // console.log("");
         console.log("done!");
     }catch(err)
     {
