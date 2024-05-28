@@ -12,14 +12,18 @@ data2.addEventListener('click',
             const arr = str.split('');
 
             const checkArr =  countDifferentTypes(arr)
-            //arr.foreach()
+            console.log('count: ', checkArr);
+
             for(var i=0; i <= arr.length; i++)
-                if(typeof arr[i]  === Number && typeof arr[i+1] === Number && typeof arr[i+2] === Number)
+                if(typeof arr[i]  === "number" && typeof arr[i+1] === "number" && typeof arr[i+2] === "number")
                     var j0 = parseInt(arr[i]);
                     var j1 = parseInt(arr[i+1]);
                     var j2 = parseInt(arr[i+2]);
-                    if((j0 == j1 && j0 == j2)  || (j1 - j0 == 1 && j2 - j0 == 2))
+                    if(((j0 == j1) && (j0 == j2))  || ((j1 - j0 == 1) && (j2 - j0 == 2)))
                         alarm();
+                        
+                else
+                    console.log('check done!');    
         }    
     }
 );
